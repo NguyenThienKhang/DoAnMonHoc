@@ -1,4 +1,5 @@
 ﻿using DoAnMonHoc.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,15 @@ using System.Threading.Tasks;
 
 namespace DoAnMonHoc.Areas.Admin.Controllers
 {
+    [Area("admin")]
     public class CategoryController : Controller
     {
+        private readonly IHostingEnvironment _hosting;
         private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        public CategoryController(ApplicationDbContext db, IHostingEnvironment hosting)
         {
+         
+            _hosting = hosting;
             _db = db;
         }
         //Hiển thị danh sách chủng loại

@@ -52,8 +52,6 @@ namespace DoAnMonHoc
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-
-
                 //  endpoints.MapRazorPages();
                 endpoints.MapControllerRoute("areas", "{area:exists}/{controller=Login}/{action=Index}/{id?}");
 
